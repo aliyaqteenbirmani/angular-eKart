@@ -1,0 +1,15 @@
+<div class="ekart--search--product">
+    <input class="ekart-search-product-input" [(ngModel)]="searchText" (ngModelChange)="searchText = $event"
+           type="text" 
+           placeholder="Search for products, brands and more">
+    <button class="btn btn-search">Search</button>
+</div>
+<div class="ekart-search-result-for">
+    <p>Search results for: <strong>{{searchText}}</strong></p>
+</div>
+
+<!-- <div class="ekart-product-container-header">
+    <h2>SHOES</h2>
+</div>
+<div class="ekart--product--container"> -->
+    
