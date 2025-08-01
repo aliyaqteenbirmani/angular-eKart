@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  name="Ali Yaqteen";
+  name="Ali";
+  addToCart:any = 0;
   product = {name: 'iPhone 14 Pro Max',
             price: 1099,
             color: 'Space Black',
@@ -18,5 +19,28 @@ export class ProductListComponent {
             getDiscountedPrice()
             {
               return this.product.price - (this.product.price * this.product.discount / 100);
+            }
+
+            onNameChange(event : any)
+            {
+              this.name = event.target.value;
+              console.log(this.name);
+            }
+
+            incrementCartValue() {
+              if (this.product.inStock > 0) {
+                this.addToCart++;
+                this.product.inStock--;
+              }
+              if (this.product.inStock < 0) {
+                return;
+              }
+            }
+
+            decrementCartValue() {
+              if (this.addToCart > 0) {
+                this.addToCart--;
+                this.product.inStock++;
+              }
             }
 }

@@ -1,3 +1,4 @@
+<div class="ekart--product--container">
 <img [src]="product.pImage">
 <p>Name: {{ product.name }}</p>
 <p>Price: {{ product.price | currency }}</p>
@@ -6,5 +7,10 @@
 <p>Discounted Price: {{ getDiscountedPrice() | currency }}</p>
 <p>In Stock: {{ product.inStock ? 'Only ' + product.inStock + ' items left' : 'Not in stock' }}</p>
 <p>Description: {{ product.description }}</p>
-<button [disabled]="!(product.inStock > 0)" >Buy Now</button>
-<input bind-value="name" >
+<button (click)="decrementCartValue()">-</button>
+<span>{{ addToCart }}</span>
+<button (click)="incrementCartValue()">+</button>
+<!-- <button [disabled]="!(product.inStock > 0)" >Buy Now</button> -->
+<!-- <input (input)="onNameChange($event)" >
+<p>Input Name: {{ name }}</p> -->
+</div>
