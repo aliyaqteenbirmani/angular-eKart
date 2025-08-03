@@ -2,10 +2,10 @@
     <input class="ekart-search-product-input" [(ngModel)]="searchText" (ngModelChange)="searchText = $event"
            type="text" 
            placeholder="Search for products, brands and more">
-    <button class="btn btn-search">Search</button>
+    <button [ngClass]="{'btn': true, 'btn-search': searchText,'btn-search-disabled': !searchText}" [disabled]="!searchText" style="border-radius: 0px;" >Search</button>
 </div>
 <div class="ekart-search-result-for">
-    <p>Search results for: <strong>{{searchText}}</strong></p>
+    <p *ngIf="searchText != ''" >Search results for: <strong>{{searchText}}</strong></p>
 </div>
 
 <!-- <div class="ekart-product-container-header">
