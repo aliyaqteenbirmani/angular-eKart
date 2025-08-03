@@ -1,4 +1,4 @@
-/* 
+
 .ekart--search--bar{
     padding: 0 3vh;
     display: flex;
@@ -20,10 +20,10 @@
     border: none;
     background-color: #efefef;
 
-    /* margin-bottom: 5px; */
-/* } */
+    margin-bottom: 5px; 
+ } 
 
-/*.btn{
+.btn{
     padding: 15px 25px;
     border: none;
     margin: 10px 0px;
@@ -32,4 +32,4 @@
 .btn-primary{
     background-color: #28282B;
     color: white;
-} */
+} 
