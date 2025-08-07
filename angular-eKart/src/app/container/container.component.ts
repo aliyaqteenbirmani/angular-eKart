@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-  name="Ali";
-  addToCart:any = 0;
-  products = ["IPhone 14 Pro Max","Samsung Galaxy S23 Ultra", "Google Pixel 9 Pro"];
-            
-
-           
+   searchText: string = '';    
+   
+   setSearchText(value: string) 
+   {
+    // This method will be called when the search text is changed in the search component
+    // It can be used to update the search text in the container component if needed
+    this.searchText = value;
+    console.log(`Search text in container updated: ${this.searchText}`);
+    // You can also perform any additional logic here, such as filtering products based on the search text
+   }
 }
