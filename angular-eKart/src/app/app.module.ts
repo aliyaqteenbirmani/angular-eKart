@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './container/product-list/product-list.component';
 import { ProductComponent } from './container/product-list/product/product.component';
 import { FilterComponent } from './container/product-list/filter/filter.component';
+import { ProductDetailsComponent } from './container/product-details/product-details.component';
+import { FeaturedBrandsComponent } from './container/featured-brands/featured-brands.component';
+import { SetBackGround } from './CustomDirectives/SetBackGround.directives';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { FilterComponent } from './container/product-list/filter/filter.componen
     SearchComponent,
     ProductListComponent,
     ProductComponent,
-    FilterComponent
+    FilterComponent,
+    ProductDetailsComponent,
+    FeaturedBrandsComponent,
+    SetBackGround
   ],
   imports: [
     BrowserModule,FormsModule

@@ -1,4 +1,32 @@
 <div class="ekart--product--container">
     <app-search (searchTextChanged)="setSearchText($event)"></app-search>
-    <product-list [searchText]="searchText"></product-list> <!-- for property binding we use square brackets -->
+    <product-list 
+        [searchText]="searchText" 
+        #productListComponent>
+    </product-list> <!-- for property binding we use square brackets -->
+
+    <product-details 
+        *ngIf="productListComponent.selectedProduct" 
+        [productListComp]="productListComponent">
+    </product-details>
+
+    <div class="ekart-featured-products">
+        <div class="ekart-featured-product-heading">
+            <h1>Latest Arrival in Popular Brands</h1>
+        </div>
+
+        <featured-brands>
+            <h3 class="title">New Arrival in Niki</h3>
+            <button class="call-to-action">Show New Arrivals</button>
+
+        </featured-brands>
+        <featured-brands>
+            <h3 class="title">New Arrival in Adidas</h3>
+            <button class="call-to-action">Show New Arrivals</button> 
+        </featured-brands>
+        <featured-brands>
+            <h3 class="title">New Arrival in Puma</h3>
+            <button class="call-to-action">Show New Arrivals</button>
+        </featured-brands>
+    </div>
 </div>
