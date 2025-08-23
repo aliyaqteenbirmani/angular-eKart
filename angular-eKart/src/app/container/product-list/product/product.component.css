@@ -57,7 +57,9 @@
     color: #999;
     margin-top: 7px;
 }
-.ekart--products--items:hover{
+
+
+.highlight-product{
     -webkit-box-shadow: 0 0 1px #000 inset;
     -moz-box-shadow: 0 0 1px 3px #000 inset;
     border: #efefef 0 0 1px 3px #000 inset;

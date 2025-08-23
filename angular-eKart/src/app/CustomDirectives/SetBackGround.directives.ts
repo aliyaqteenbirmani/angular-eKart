@@ -1,4 +1,4 @@
-import { Directive, ElementRef,OnInit } from "@angular/core";
+import { Directive, ElementRef,Input,OnInit,Renderer2 } from "@angular/core";
 
 
 @Directive({
@@ -8,11 +8,16 @@ import { Directive, ElementRef,OnInit } from "@angular/core";
 
 export class SetBackGround implements  OnInit {
 
-    constructor(private element: ElementRef) {
+    // @Input('setBackGround') backColor: string = "#36454f";
+    // @Input() textColor: string = 'white';
+
+    @Input('setBackGround') changeTextAndBackColor:{backColor:string,textColor:string};
+    constructor(private element: ElementRef,private renderer: Renderer2) {
     }
 
     ngOnInit() {
-        this.element.nativeElement.style.backgroundColor = '#36454f';
-        this.element.nativeElement.style.color = 'white';
+        this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', this.changeTextAndBackColor.backColor);
+        this.renderer.setStyle(this.element.nativeElement, 'color', this.changeTextAndBackColor.textColor);
+        this.renderer.setAttribute(this.element.nativeElement, 'title', 'Click to copy');
     }
 }
